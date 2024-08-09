@@ -23,7 +23,7 @@ tasks.named('test') {
 }
 
 //일반 Jar 생성
-task buildJar(type: Jar) {
+tasks.register('buildJar', Jar) {
     manifest {
         attributes 'Main-Class': 'hello.embed.EmbedTomcatSpringMain'
     }
@@ -31,7 +31,7 @@ task buildJar(type: Jar) {
 }
 
 //Fat Jar 생성
-task buildFatJar(type: Jar) {
+tasks.register('buildFatJar', Jar) {
     manifest {
         attributes 'Main-Class': 'hello.embed.EmbedTomcatSpringMain'
     }
